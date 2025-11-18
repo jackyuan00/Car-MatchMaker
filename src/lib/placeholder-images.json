@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "A-Class",
+      "description": "A compact and tech-forward hatchback.",
+      "imageUrl": "https://images.unsplash.com/photo-1616932284498-52d1b727ae74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb2Rlcm4lMjBjYXJ8ZW58MHx8fHwxNzYzNDI3MDE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern car"
+    },
+    {
+      "id": "C-Class",
+      "description": "A stylish and luxurious sedan.",
+      "imageUrl": "https://images.unsplash.com/photo-1669254383049-eb9462788446?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsdXh1cnklMjBzZWRhbnxlbnwwfHx8fDE3NjMzMzc0NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury sedan"
+    },
+    {
+      "id": "E-Class",
+      "description": "An executive sedan with advanced technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1758521961640-7ad0a074bcd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxleGVjdXRpdmUlMjBjYXJ8ZW58MHx8fHwxNzYzNDMyNTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "executive car"
+    },
+    {
+      "id": "S-Class",
+      "description": "The pinnacle of luxury and innovation.",
+      "imageUrl": "https://images.unsplash.com/photo-1759683730015-c16a96c65ae9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsdXh1cnklMjBsaW1vdXNpbmV8ZW58MHx8fHwxNzYzNDMyNTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury limousine"
+    },
+    {
+      "id": "CLA",
+      "description": "A sleek four-door coupe.",
+      "imageUrl": "https://images.unsplash.com/photo-1685918397611-5137fb91d77d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbGVlayUyMGNvdXBlfGVufDB8fHx8MTc2MzQzMjUwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sleek coupe"
+    },
+    {
+      "id": "CLS",
+      "description": "A design icon, the original four-door coupe.",
+      "imageUrl": "https://images.unsplash.com/photo-1749566566987-a900cec063d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbGVnYW50JTIwY291cGV8ZW58MHx8fHwxNzYzNDMyNTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "elegant coupe"
+    },
+    {
+      "id": "GLA",
+      "description": "A compact SUV for urban adventures.",
+      "imageUrl": "https://images.unsplash.com/photo-1758228674135-ccb8865f1b02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYWN0JTIwU1VWfGVufDB8fHx8MTc2MzQzMjUwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "compact SUV"
+    },
+    {
+      "id": "GLC",
+      "description": "A versatile and sporty mid-size SUV.",
+      "imageUrl": "https://images.unsplash.com/photo-1758249196668-dfda72e66fc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcG9ydHklMjBTVVZ8ZW58MHx8fHwxNzYzNDMyNTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sporty SUV"
+    },
+    {
+      "id": "GLE",
+      "description": "A spacious and intelligent luxury SUV.",
+      "imageUrl": "https://images.unsplash.com/photo-1658006097063-d998b3cc0fab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXJnZSUyMFNVVnxlbnwwfHx8fDE3NjM0MzI1MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "large SUV"
+    },
+    {
+      "id": "GLS",
+      "description": "The S-Class of SUVs, offering ultimate space and comfort.",
+      "imageUrl": "https://images.unsplash.com/photo-1700884520248-92092bd21e63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBTVVZ8ZW58MHx8fHwxNzYzNDMyNTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury SUV"
+    },
+    {
+      "id": "G-Class",
+      "description": "An iconic off-roader with unparalleled presence.",
+      "imageUrl": "https://images.unsplash.com/photo-1633867179970-c54688bcfa33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvZmZyb2FkJTIwdmVoaWNsZXxlbnwwfHx8fDE3NjM0MzI1MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "offroad vehicle"
+    },
+    {
+      "id": "SL",
+      "description": "A legendary roadster for thrilling open-air driving.",
+      "imageUrl": "https://images.unsplash.com/photo-1659890063603-708fd0473544?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb252ZXJ0aWJsZSUyMGNhcnxlbnwwfHx8fDE3NjMzMzc0NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "convertible car"
+    },
+    {
+      "id": "AMG GT",
+      "description": "A pure sports car with motorsport DNA.",
+      "imageUrl": "https://images.unsplash.com/photo-1628519592419-bf288f08cef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNzYzMzc0MjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sports car"
+    },
+    {
+      "id": "fallback",
+      "description": "A versatile and popular choice.",
+      "imageUrl": "https://images.unsplash.com/photo-1648178328042-b7c0f62e4181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwY2FyfGVufDB8fHx8MTc2MzQyNzAxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern car"
+    }
+  ]
 }

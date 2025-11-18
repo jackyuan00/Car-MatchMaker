@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What's your ideal weekend getaway?",
+      "options": {
+        "A": "A scenic mountain drive with winding roads",
+        "B": "A luxurious beach resort with valet parking",
+        "C": "An adventurous off-road camping trip",
+        "D": "A sophisticated city break with fine dining"
+      }
+    },
+    {
+      "id": 2,
+      "question": "How many people do you typically travel with?",
+      "options": {
+        "A": "Just me or one other person",
+        "B": "A small group of friends or family (2-4)",
+        "C": "My whole family, including kids and gear (5+)",
+        "D": "It varies, I need flexibility"
+      }
+    },
+    {
+      "id": 3,
+      "question": "What's most important to you in a car's interior?",
+      "options": {
+        "A": "Cutting-edge technology and a huge screen",
+        "B": "The finest leather and wood trim",
+        "C": "Durable, easy-to-clean materials",
+        "D": "A sporty feel with carbon fiber accents"
+      }
+    },
+    {
+      "id": 4,
+      "question": "How would you describe your driving style?",
+      "options": {
+        "A": "Spirited and engaging, I love corners",
+        "B": "Relaxed and comfortable, it's about the journey",
+        "C": "Confident and capable, on any terrain",
+        "D": "Fast and powerful, I crave performance"
+      }
+    },
+    {
+      "id": 5,
+      "question": "Which feature excites you the most?",
+      "options": {
+        "A": "A convertible top for open-air driving",
+        "B": "A massive, powerful engine with a roaring exhaust",
+        "C": "The latest driver-assistance and safety features",
+        "D": "Maximum cargo space for all my equipment"
+      }
+    }
+  ]
+}
