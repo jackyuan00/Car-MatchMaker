@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import QuestionCard from "@/components/question-card";
 import RecommendationCard from "@/components/recommendation-card";
-import questionsData from "./data/questions.json";
 import type { Question, Answers, Recommendation } from "@/lib/types";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useToast } from "@/hooks/use-toast";
@@ -22,8 +21,9 @@ export default function Home() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
-  const { questions }: { questions: Question[] } = questionsData;
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [direction, setDirection] = useState(1);
+  const [isLoadingQuestions, setIsLoadingQuestions] = useState(true);
 
   const handleAnswer = useCallback((questionId: number, answer: string) => {
     setAnswers((prev) => ({ ...prev, [questionId]: answer }));
@@ -46,13 +46,18 @@ export default function Home() {
   const handleSubmit = async () => {
     setAppState("loading");
     try {
-      // TODO: Replace with your actual backend endpoint
-      const response = await fetch('/api/recommend', {
+      // Format answers as an array for the backend
+      const answersArray = Object.entries(answers).map(([questionId, answer]) => ({
+        questionId: parseInt(questionId),
+        answer: answer
+      }));
+
+      const response = await fetch('/api/recommendations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ answers }),
+        body: JSON.stringify({ answers: answersArray }),
       });
 
       if (!response.ok) {
@@ -140,6 +145,35 @@ export default function Home() {
     });
   }, []);
 
+  // Fetch questions from backend
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        setIsLoadingQuestions(true);
+        const response = await fetch('/api/questions');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch questions');
+        }
+        
+        const data = await response.json();
+        setQuestions(data.questions || []);
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: "Could not load questions. Using fallback questions.",
+        });
+        // Fallback to empty array - the API route will handle fallback
+      } finally {
+        setIsLoadingQuestions(false);
+      }
+    };
+
+    fetchQuestions();
+  }, [toast]);
+
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background overflow-hidden font-body">
@@ -187,12 +221,21 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center bg-background/30 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-2xl"
             >
-              <p className="text-xl mb-8 text-foreground">
-                Answer a few questions to discover the car model that's tailored for you.
-              </p>
-              <Button size="lg" onClick={() => setAppState("quiz")} className="bg-blue-600 hover:bg-blue-500 text-white">
-                Start Quiz
-              </Button>
+              {isLoadingQuestions ? (
+                <div className="flex flex-col items-center gap-4">
+                  <Loader2 className="h-8 w-8 animate-spin text-blue-400" />
+                  <p className="text-xl text-foreground">Loading questions...</p>
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl mb-8 text-foreground">
+                    Answer a few questions to discover the car model that's tailored for you.
+                  </p>
+                  <Button size="lg" onClick={() => setAppState("quiz")} disabled={questions.length === 0} className="bg-blue-600 hover:bg-blue-500 text-white">
+                    Start Quiz
+                  </Button>
+                </>
+              )}
             </motion.div>
           )}
 
@@ -204,42 +247,46 @@ export default function Home() {
               exit={{ opacity: 0 }}
               className="w-full"
             >
-              <Progress value={progressValue} className="mb-4 h-2 bg-white/20" />
-              <AnimatePresence initial={false} custom={direction} mode="wait">
-                <motion.div
-                  key={currentQuestionIndex}
-                  custom={direction}
-                  variants={cardVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                >
-                  <QuestionCard
-                    question={questions[currentQuestionIndex]}
-                    onAnswer={handleAnswer}
-                    selectedOption={answers[questions[currentQuestionIndex].id]}
-                  />
-                </motion.div>
-              </AnimatePresence>
-              <div className="flex justify-between mt-6">
-                <Button
-                  variant="outline"
-                  onClick={handleBack}
-                  disabled={currentQuestionIndex === 0}
-                  className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"
-                >
-                  Back
-                </Button>
-                {currentQuestionIndex < questions.length - 1 ? (
-                  <Button onClick={handleNext} disabled={!isCurrentQuestionAnswered} className="bg-blue-600 hover:bg-blue-500 text-white">
-                    Next
-                  </Button>
-                ) : (
-                  <Button onClick={handleSubmit} disabled={!isCurrentQuestionAnswered} className="bg-blue-600 hover:bg-blue-500 text-white">
-                    Get Recommendation
-                  </Button>
-                )}
-              </div>
+              {questions.length > 0 && (
+                <>
+                  <Progress value={progressValue} className="mb-4 h-2 bg-white/20" />
+                  <AnimatePresence initial={false} custom={direction} mode="wait">
+                    <motion.div
+                      key={currentQuestionIndex}
+                      custom={direction}
+                      variants={cardVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                    >
+                      <QuestionCard
+                        question={questions[currentQuestionIndex]}
+                        onAnswer={handleAnswer}
+                        selectedOption={answers[questions[currentQuestionIndex].id]}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                  <div className="flex justify-between mt-6">
+                    <Button
+                      variant="outline"
+                      onClick={handleBack}
+                      disabled={currentQuestionIndex === 0}
+                      className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"
+                    >
+                      Back
+                    </Button>
+                    {currentQuestionIndex < questions.length - 1 ? (
+                      <Button onClick={handleNext} disabled={!isCurrentQuestionAnswered} className="bg-blue-600 hover:bg-blue-500 text-white">
+                        Next
+                      </Button>
+                    ) : (
+                      <Button onClick={handleSubmit} disabled={!isCurrentQuestionAnswered} className="bg-blue-600 hover:bg-blue-500 text-white">
+                        Get Recommendation
+                      </Button>
+                    )}
+                  </div>
+                </>
+              )}
             </motion.div>
           )}
           
