@@ -30,8 +30,29 @@ const prompt = ai.definePrompt({
   name: 'recommendMercedesModelPrompt',
   input: {schema: RecommendMercedesModelInputSchema},
   output: {schema: RecommendMercedesModelOutputSchema},
-  prompt: `You are a Mercedes-Benz car expert. Based on the user's answers to the following questions, recommend a Mercedes-Benz model and explain your reasoning.\n\nAnswers: {{{answers}}}\n\nConsider these Mercedes-Benz models: A-Class, C-Class, E-Class, S-Class, CLA, CLS, GLA, GLC, GLE, GLS, G-Class, SL, AMG GT.
-Pick one model. Explain in one sentence why the model is picked. Return the model and reason as JSON.`, // Added instructions for output format
+  prompt: `You are a Mercedes-Benz car expert. Your task is to recommend a single Mercedes-Benz model based on the user's answers to a quiz.
+
+You MUST choose one model from the following list:
+- A-Class
+- C-Class
+- E-Class
+- S-Class
+- CLA
+- CLS
+- GLA
+- GLC
+- GLE
+- GLS
+- G-Class
+- SL
+- AMG GT
+
+Analyze the user's answers carefully:
+{{{answers}}}
+
+Based on these answers, select the most suitable model from the provided list. Then, provide a concise, one-sentence explanation for your recommendation.
+
+Return the result as a JSON object with the "model" and "reason" fields.`,
 });
 
 const recommendMercedesModelFlow = ai.defineFlow(
