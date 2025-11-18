@@ -12,42 +12,92 @@
     },
     {
       "id": 2,
-      "question": "How many people do you typically travel with?",
+      "question": "How would you describe your driving style?",
       "options": {
-        "A": "Just me or one other person",
-        "B": "A small group of friends or family (2-4)",
-        "C": "My whole family, including kids and gear (5+)",
-        "D": "It varies, I need flexibility"
+        "A": "Smooth and comfortable, I like to cruise",
+        "B": "Dynamic and sporty, I enjoy the thrill",
+        "C": "Practical and efficient, getting from A to B",
+        "D": "Elegant and commanding, making a statement"
       }
     },
     {
       "id": 3,
-      "question": "What's most important to you in a car's interior?",
+      "question": "What's your favorite type of music for a road trip?",
       "options": {
-        "A": "Cutting-edge technology and a huge screen",
-        "B": "The finest leather and wood trim",
-        "C": "Durable, easy-to-clean materials",
-        "D": "A sporty feel with carbon fiber accents"
+        "A": "Classical or jazz for a refined atmosphere",
+        "B": "High-energy electronic or rock",
+        "C": "Pop hits and sing-alongs",
+        "D": "Podcasts about business and success"
       }
     },
     {
       "id": 4,
-      "question": "How would you describe your driving style?",
+      "question": "If your car could have a superpower, what would it be?",
       "options": {
-        "A": "Spirited and engaging, I love corners",
-        "B": "Relaxed and comfortable, it's about the journey",
-        "C": "Confident and capable, on any terrain",
-        "D": "Fast and powerful, I crave performance"
+        "A": "Invisibility to avoid traffic",
+        "B": "Super speed for thrilling acceleration",
+        "C": "Self-cleaning interior (because who has time?)",
+        "D": "Mind-reading to anticipate your every need"
       }
     },
     {
       "id": 5,
-      "question": "Which feature excites you the most?",
+      "question": "What's your approach to treating yourself?",
       "options": {
-        "A": "A convertible top for open-air driving",
-        "B": "A massive, powerful engine with a roaring exhaust",
-        "C": "The latest driver-assistance and safety features",
-        "D": "Maximum cargo space for all my equipment"
+        "A": "I save up for something truly special once in a while",
+        "B": "I believe in rewarding hard work with premium quality",
+        "C": "I'm practical but enjoy small luxuries",
+        "D": "Only the finest will do - I invest in excellence"
+      }
+    },
+    {
+      "id": 6,
+      "question": "How many passengers do you usually have with you?",
+      "options": {
+        "A": "Just me, my personal sanctuary",
+        "B": "One or two, intimate conversations",
+        "C": "A full crew - family or friends",
+        "D": "Business associates or clients"
+      }
+    },
+    {
+      "id": 7,
+      "question": "What's your dream road trip destination?",
+      "options": {
+        "A": "The Autobahn in Germany for limitless cruising",
+        "B": "The Pacific Coast Highway for stunning views",
+        "C": "Swiss Alps for precision engineering roads",
+        "D": "Monaco Grand Prix circuit for ultimate prestige"
+      }
+    },
+    {
+      "id": 8,
+      "question": "Which movie character's car would you want?",
+      "options": {
+        "A": "James Bond - sophisticated and powerful",
+        "B": "Tony Stark - cutting-edge technology",
+        "C": "Batman - versatile and commanding",
+        "D": "The Italian Job crew - agile and stylish"
+      }
+    },
+    {
+      "id": 9,
+      "question": "What's most important in your daily commute?",
+      "options": {
+        "A": "Comfort and a smooth ride",
+        "B": "Advanced tech and connectivity",
+        "C": "Safety features and reliability",
+        "D": "Making an impression when I arrive"
+      }
+    },
+    {
+      "id": 10,
+      "question": "How do you celebrate your achievements?",
+      "options": {
+        "A": "A nice dinner at a favorite restaurant",
+        "B": "An adrenaline-pumping experience or adventure",
+        "C": "Quality time with loved ones",
+        "D": "Acquiring something that reflects my success"
       }
     }
   ]
