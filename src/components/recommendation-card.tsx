@@ -29,7 +29,7 @@ export default function RecommendationCard({
     PlaceHolderImages.find((img) => img.id === "fallback");
 
   return (
-    <Card className="w-full overflow-hidden shadow-2xl bg-background/50 border-border">
+    <Card className="w-full overflow-hidden shadow-2xl bg-background/30 backdrop-blur-md border border-white/10">
       <CardHeader className="p-0">
         {carImage && (
           <div className="aspect-video relative w-full">
@@ -45,7 +45,7 @@ export default function RecommendationCard({
         )}
       </CardHeader>
       <CardContent className="p-6">
-        <CardTitle className="text-4xl font-headline text-primary mb-2">
+        <CardTitle className="text-4xl font-headline text-primary-foreground mb-2">
           Your Recommendation: {recommendation.model}
         </CardTitle>
         <CardDescription className="text-lg text-foreground/80">
@@ -53,9 +53,9 @@ export default function RecommendationCard({
         </CardDescription>
 
         {recommendation.error && (
-          <Alert variant="destructive" className="mt-4">
-            <Terminal className="h-4 w-4" />
-            <AlertTitle>AI Error</AlertTitle>
+          <Alert variant="destructive" className="mt-4 bg-red-900/50 border-red-500/50 text-red-200">
+            <Terminal className="h-4 w-4 text-red-300" />
+            <AlertTitle>Error</AlertTitle>
             <AlertDescription>
               {recommendation.error} A default recommendation has been provided.
             </AlertDescription>
@@ -63,7 +63,7 @@ export default function RecommendationCard({
         )}
       </CardContent>
       <CardFooter>
-        <Button size="lg" onClick={onReset} className="w-full">
+        <Button size="lg" onClick={onReset} className="w-full bg-blue-600 hover:bg-blue-500 text-white">
           Start Over
         </Button>
       </CardFooter>

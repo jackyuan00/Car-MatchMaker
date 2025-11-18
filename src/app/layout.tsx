@@ -17,8 +17,8 @@ const lexend = Lexend({
 
 
 export const metadata: Metadata = {
-  title: 'Mercedes Benz AI Configurator',
-  description: 'Find your perfect Mercedes-Benz with our AI-powered quiz.',
+  title: 'Car MatchMaker',
+  description: 'Find your perfect car with our AI-powered quiz.',
 };
 
 export default function RootLayout({
