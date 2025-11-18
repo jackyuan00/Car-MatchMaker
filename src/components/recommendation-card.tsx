@@ -29,7 +29,7 @@ export default function RecommendationCard({
     PlaceHolderImages.find((img) => img.id === "fallback");
 
   return (
-    <Card className="w-full overflow-hidden shadow-2xl">
+    <Card className="w-full overflow-hidden shadow-2xl bg-background/50 border-border">
       <CardHeader className="p-0">
         {carImage && (
           <div className="aspect-video relative w-full">

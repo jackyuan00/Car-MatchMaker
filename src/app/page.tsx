@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Car, Loader2 } from "lucide-react";
 
@@ -11,6 +12,7 @@ import RecommendationCard from "@/components/recommendation-card";
 import { getRecommendation } from "@/app/actions";
 import questionsData from "./data/questions.json";
 import type { Question, Answers, Recommendation } from "@/lib/types";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 type QuizState = "welcome" | "quiz" | "loading" | "result";
 
@@ -90,16 +92,25 @@ export default function Home() {
 
   // Preload images
   useEffect(() => {
-    questions.forEach((_, index) => {
-      const img = new Image();
-      img.src = `https://picsum.photos/seed/${index + 10}/600/400`;
+    PlaceHolderImages.forEach((p) => {
+      const img = new window.Image();
+      img.src = p.imageUrl;
     });
-  }, [questions]);
+  }, []);
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background">
-      <div className="w-full max-w-2xl mx-auto">
+    <main className="relative flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-background overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      </div>
+      <div className="w-full max-w-2xl mx-auto z-10">
         <header className="mb-8 text-center">
           <div className="flex justify-center items-center gap-3 mb-2">
             <Car className="w-8 h-8 text-primary" />
@@ -120,7 +131,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="text-center"
+              className="text-center bg-background/50 border border-border rounded-xl p-8 shadow-2xl"
             >
               <p className="text-xl mb-8 text-foreground">
                 Answer a few questions to discover the Mercedes-Benz model that's tailored to your lifestyle.
@@ -169,7 +180,7 @@ export default function Home() {
                     Next
                   </Button>
                 ) : (
-                  <Button onClick={handleSubmit} disabled={!isCurrentQuestionAnswered} className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  <Button onClick={handleSubmit} disabled={!isCurrentQuestionAnswered} className="bg-blue-600 hover:bg-blue-700 text-white">
                     Get Recommendation
                   </Button>
                 )}

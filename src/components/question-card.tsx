@@ -26,7 +26,7 @@ export default function QuestionCard({
   };
 
   return (
-    <Card className="w-full shadow-lg border-2 border-transparent hover:border-primary/20 transition-all duration-300">
+    <Card className="w-full shadow-lg border-2 bg-background/50 border-border transition-all duration-300">
       <CardHeader>
         <CardTitle className="text-2xl font-headline text-center">
           {question.question}
@@ -44,8 +44,8 @@ export default function QuestionCard({
               htmlFor={`${question.id}-${key}`}
               className={`flex items-center space-x-4 rounded-lg border p-4 cursor-pointer transition-colors duration-200 ${
                 selectedOption === key
-                  ? "bg-primary/10 border-primary ring-2 ring-primary"
-                  : "hover:bg-muted"
+                  ? "bg-primary/10 border-blue-500 ring-2 ring-blue-500"
+                  : "hover:bg-muted/50 border-border"
               }`}
             >
               <RadioGroupItem value={key} id={`${question.id}-${key}`} />
